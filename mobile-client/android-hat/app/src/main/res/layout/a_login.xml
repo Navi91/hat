@@ -1,43 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".login.activity.LoginActivity">
+    tools:context=".login.activity.LoginActivity"
+    >
 
-    <EditText
-        android:id="@+id/userName"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
-        android:focusable="true"
-        android:hint="User Name"
-        android:imeOptions="actionNext|flagNoExtractUi"
-        android:inputType="textEmailAddress" />
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
 
-    <EditText
-        android:id="@+id/password"
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:focusable="true"
+            android:hint="User Name"
+            android:imeOptions="actionNext|flagNoExtractUi"
+            android:inputType="textEmailAddress"
+            />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:focusable="true"
+            android:hint="Password"
+            android:imeOptions="actionNext|flagNoExtractUi"
+            android:inputType="textPassword"
+            />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minWidth="100dp"
+            android:text="Login"
+            />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/progressLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="@android:color/white"
+        android:clickable="true"
         android:focusable="true"
-        android:hint="Password"
-        android:imeOptions="actionNext|flagNoExtractUi"
-        android:inputType="textPassword" />
+        android:visibility="gone"
+        >
 
+        <ProgressBar
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:minWidth="100dp"
-        android:text="Login" />
+    </FrameLayout>
 
-</LinearLayout>
+</FrameLayout>
