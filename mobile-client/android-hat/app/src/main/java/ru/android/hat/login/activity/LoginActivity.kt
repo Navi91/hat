@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.a_login.usernameEditText
 import ru.android.hat.R
 import ru.android.hat.core.plusAssign
 import ru.android.hat.core.showToast
+import ru.android.hat.mainmenu.MainMenuActivity
 import ru.android.hat.zoom.auth.AuthIdentityExpiredAuthEvent
 import ru.android.hat.zoom.auth.IdentityExpiredAuthEvent
 import ru.android.hat.zoom.auth.SDKLoginResultAuthEvent
@@ -83,6 +84,9 @@ class LoginActivity : AppCompatActivity() {
         when (result) {
             ZoomAuthenticationError.ZOOM_AUTH_ERROR_SUCCESS -> {
                 showToast("Auth success")
+
+                startActivity(MainMenuActivity.createIntent(this))
+                finish()
             }
             ZoomAuthenticationError.ZOOM_AUTH_ERROR_USER_NOT_EXIST -> {
                 showToast("User not exist")
